@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VTT a TXT Transformador</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="background-animation">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <main class="container">
+        <header>
+            <h1>VTT <span class="highlight">to</span> TXT</h1>
+            <p>Transforma tus subtítulos en texto limpio al instante.</p>
+        </header>
+
+        <div class="bento-grid">
+            <!-- Upload Section -->
+            <div class="bento-item upload-section glass" id="dropZone">
+                <input type="file" id="fileInput" accept=".vtt" hidden>
+                <div class="upload-content">
+                    <div class="icon-container">
+                        <i class="fa-solid fa-cloud-arrow-up"></i>
+                    </div>
+                    <h2>Sube tu archivo .vtt</h2>
+                    <p>Arrastra y suelta aquí o <button class="text-btn" id="browseBtn">explora tus archivos</button></p>
+                </div>
+                <div class="file-info hidden" id="fileInfo">
+                    <i class="fa-solid fa-file-lines"></i>
+                    <span id="fileName">archivo.vtt</span>
+                    <button id="removeFileBtn" class="icon-btn"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+            </div>
+
+            <!-- Options Section -->
+            <div class="bento-item options-section glass">
+                <h3>Opciones de Formato</h3>
+                <div class="options-group">
+                    <label class="toggle-container">
+                        <input type="checkbox" id="keepTimestampsToggle" checked>
+                        <span class="toggle-slider"></span>
+                        <span class="toggle-label">Conservar tiempos (Ideal para crear clips)</span>
+                    </label>
+                    <label class="toggle-container">
+                        <input type="checkbox" disabled checked>
+                        <span class="toggle-slider"></span>
+                        <span class="toggle-label">Limpiar formato extra (Siempre activo)</span>
+                    </label>
+                </div>
+                <button id="convertBtn" class="primary-btn" disabled>
+                    <span>Transformar</span>
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                </button>
+            </div>
+
+            <!-- Output Section -->
+            <div class="bento-item output-section glass">
+                <div class="output-header">
+                    <h3>Resultado</h3>
+                    <div class="action-buttons">
+                        <button id="copyBtn" class="secondary-btn" disabled>
+                            <i class="fa-regular fa-copy"></i> Copiar
+                        </button>
+                        <button id="downloadBtn" class="primary-btn" disabled>
+                            <i class="fa-solid fa-download"></i> Descargar .txt
+                        </button>
+                    </div>
+                </div>
+                <div class="textarea-container">
+                    <textarea id="outputText" placeholder="Tu texto limpio aparecerá aquí..." readonly></textarea>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
