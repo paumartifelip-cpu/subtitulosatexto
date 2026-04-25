@@ -78,6 +78,32 @@
                 </div>
             </div>
         </div>
+        
+        <!-- AI Analysis Section -->
+        <div class="bento-grid" style="margin-top: 1.5rem;">
+            <div class="bento-item ai-section glass" style="grid-column: 1 / -1; background: var(--card-gradient-1);">
+                <div class="output-header">
+                    <h3><i class="fa-solid fa-robot"></i> Análisis de Clips con IA</h3>
+                    <div class="action-buttons">
+                        <button id="aiAnalyzeBtn" class="primary-btn" disabled>
+                            <i class="fa-solid fa-brain"></i> Extraer Mejores Clips
+                        </button>
+                    </div>
+                </div>
+                <p style="color: var(--text-secondary); margin-bottom: 1rem; font-size: 0.9rem;">
+                    Esta función usa ChatGPT para leer el texto y encontrar los fragmentos más virales e interesantes, indicando su minuto exacto.
+                </p>
+                
+                <div class="api-key-container" style="margin-bottom: 1.5rem;">
+                    <label for="apiKeyInput" style="display: block; margin-bottom: 0.5rem; font-size: 0.9rem; font-weight: 500;">Tu OpenAI API Key (Segura, solo se guarda en tu navegador):</label>
+                    <input type="password" id="apiKeyInput" placeholder="sk-..." style="width: 100%; padding: 0.75rem; border-radius: 12px; border: 1px solid var(--card-border); background: rgba(255,255,255,0.4); outline: none;">
+                </div>
+                
+                <div class="textarea-container" id="aiOutputContainer" style="display: none;">
+                    <textarea id="aiOutputText" placeholder="Los clips recomendados aparecerán aquí..." readonly></textarea>
+                </div>
+            </div>
+        </div>
     </main>
 
     <script src="script.js"></script>
